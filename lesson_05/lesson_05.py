@@ -15,57 +15,62 @@ for i in some_one_str:
 
 # # Списки
 # ## створення списків - пустий і зі значеннями
-# blank_list = []
-# big_list = [7, 336, 61, "--==--", 'spam', 'dev', 1.23]
-# # індексація, зрізи
-# print(big_list[1])
-# print(big_list[1:4])
-# print(big_list[-2])
-# big_big_list = ["abc", "b", "c", big_list]
-# print(big_big_list[0][2])
-# print(big_big_list)
+blank_list = []
+big_list = [7, 336, 61, "--==--", 'spam', 'dev', 1.23]
+# індексація, зрізи
+print(big_list[1])
+print(big_list[1:4])
+print(big_list[-2])
+big_big_list = ["abc", "b", "c", big_list]
+print(big_big_list[0][2])
+print(big_big_list[3][2])
+print(big_big_list)
 
 
 # ## порівняння списків
-# a = [1, 3, 2]
-# b = [1, 3, 2]
-# c = [1, 3, 2, 4, [1, 3, 2]]
-# # print(a > b)  # так не робити!!!!
-# # print(a == b)
-# # print(a != b)
-# print(1 in a) # True
-# print(7 in a) # False
-# # print(a in b) # not working!!!
-# print(a in c) # working!!
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)
+c = [1, 2, 3, 4, [1, 2, 3]]
+# print(b > a)  # так не робити!!!!
+print(a != b)
+print(1 in a) # True
+print(5 in c) # False
+# print(a in c) # not working!!!
 
-# ## методи списків
-# # додавання у список
-# big_list.append(4)
-# big_list.append([4, 5])
-# print(big_list)
-# big_list.extend([5, 61, 777])
-# print(big_list)
-# big_list.insert(1, "223")
-# print(big_list)
-# big_list[1] = int(big_list[1])
-# print(big_list)
-# # пошук, перевірка значень
-# value = 61
-# print(big_list.index(value))
-# print(big_list.count(value))
-# # впорядкування даних
-# only_str = ['bbc', 'cbc', 'abc']
-# only_str.sort()  # ['abc', 'ABD', 'aBe']
-# print(only_str)
-# big_list.reverse()
-# print(big_list)
+## методи списків
+# додавання у список
+big_list.append(4)
+#big_list.append([4, 5])
+print(big_list)
+big_list.extend([5, 61, 777])#"abc"
+print(big_list)
+big_list.insert(1, "223")
+print(big_list)
+big_list[1] = int(big_list[1])
+print(big_list)
 
-# # зміни
-# new_big = big_list.copy()
-# print(new_big)
+# пошук, перевірка значень
+value = 61
+print(big_list.index(value))
+print(big_list.count(value))
+# впорядкування даних
+only_str = ['bbc', 'cbc', 'abc']
+sort_lst = sorted(only_str)
+only_str.sort()  # ['abc', 'ABD', 'aBe']
+print(only_str)
+big_list.reverse()
+print(big_list)
+print(sort_lst)
 
-# # big_list.clear()
-# # print(big_list)
+# зміни
+new_big = big_list.copy()
+# new_big = big_list
+big_list[0] = "0000"
+print(new_big)
+
+new_big.clear()
+print(new_big)
 
 
 # # big_list.extend([5,6,7])
@@ -73,15 +78,16 @@ for i in some_one_str:
 # # big_list.insert(1, "223")
 # # print(big_list)
 
-# ## вилучення значень
-# list_value = big_list.pop(2)
-# print(list_value)
-# print(big_list)
-# # пошук, перевірка значень
-# # value = 'spam'
-# # index = big_list.index(value)
-# # print(index)
-# # print(big_list.count(7))
+## вилучення значень
+# big_list.pop()
+list_value = big_list.pop(0)
+print(list_value)
+print(big_list)
+# пошук, перевірка значень
+# value = 'spam'
+# index = big_list.index(value)
+# print(index)
+# print(big_list.count(7))
 # # впорядкування даних
 
 # small_list =['abc', 'ABD', 'aBe']
@@ -99,15 +105,15 @@ for i in some_one_str:
 # # print(bl)
 # # print(big_list)
 
-# a = 0.100000000001
-# b = 0.200000000002
-# c = 0.300000000003
-# # print(a)
-# # print(b)
-# # print(c)
-# # comprehensions and List Iteration
-# int_list = [x**2 for x in range(5)]
-# print(int_list)
+a = 0.100000000001
+b = 0.200000000002
+c = 0.300000000003
+print(a)
+print(b)
+print(c)
+# comprehensions and List Iteration
+int_list = [x**2 for x in range(5)]
+print(int_list)
 
 # # Словники
 # ## створення словників

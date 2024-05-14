@@ -110,37 +110,39 @@ print(int(pi_float))
 print(int(float(pi)))
 
 
-# print(bool(""))
-# print(list("abc"))
+print(bool(""))
+print(list("abc"))
 # # # String Formatting
-# print('First: {} second: {}'.format(1, 'two'))
-# print('Second: {1}, first: {0}'.format(1, 'two'))
+print('First: {} second: {}'.format(1, 'two'))
+print('Second: {1}, first: {0}'.format(1, 'two'))
 
-# print("String: {0!s} Repr: {0!r} ASCII: {0!a}".format("banana 😀"))
+print("String: {0!s} Repr: {0!r} ASCII: {0!a}".format("banana 😀"))
 
-# s = 'a string'
-# print(f'{s:>12s}')
-# print(f'{s:<12s}')
-# print(f'{s:^12s}')
+s = 'a string'
+print(f'{s:>12s}')
+print(f'{s:<12s}')
+print(f'{s:^12s}')
 
-# x = -0.123446789
-# print(f'{x:.3f}')  #  3 float char
+x = -0.123446789
+print(f'{x:.6f}')  #  3 float char
 
-# for num in range(0,17):
-#     for base in 'dfxob':
-#         print('{0:{width}{base}}'.format(num, base=base, width=6), end=' ')
-#     print()
+for num in range(0,17):
+    for base in 'dfxob':
+        print('{0:{width}{base}}'.format(num, base=base, width=6), end=' ') # {num:6x}
+    print()
+n = 12
+print(f"{n:6x}")
+# # special character
+"\'"	# Single Quote
+"\\"	# Backslash
+"\n"	# New Line
+"\r"	# Carriage Return
+"\t"	# Tab
+"\b"	# Backspace
+"\f"	# Form Feed
 
-# # # special character
-# # "\'"	# Single Quote
-# # "\\"	# Backslash
-# # "\n"	# New Line
-# # "\r"	# Carriage Return
-# # "\t"	# Tab
-# # "\b"	# Backspace
-# # "\f"	# Form Feed
-
-# long_long_line = """\
-# Long long string\
-# """
-# print(long_long_line.count("o"))
+long_long_line = """\
+Long long string\
+"""
+print(long_long_line)
+print(long_long_line.count("o"))
