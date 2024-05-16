@@ -115,147 +115,161 @@ print(c)
 int_list = [x**2 for x in range(5)]
 print(int_list)
 
-# # Словники
-# ## створення словників
-# blank_dict = {}
-# small_dict = {'name':'Mary', 'second': 'Ann', 'age': 18}
-# big_dict= {'user': {'name':'Bob', 'second': 'Hand', 'age': 40},
-#            'is_blocked': False,
-#            'salary': 10000}
-# print(big_dict['user']) ## ['age'] - запит з вкладеного словника
+# Словники
+## створення словників
+blank_dict = {}
+small_dict = {'name':'Mary', 'second': 'Ann', 'age': 18}
+big_dict= {'user': {'name':'Bob', 'second': 'Hand', 'age': 40},
+           'is_blocked': False,
+           'salary': 10000,
+           'age': "вік"
+           }
+print(f"Слово 'age' означає: {big_dict['age']}")
+print(big_dict['user']['age']) ## - запит з вкладеного словника
+print("*"*88)
+## додавання значень в словник
+big_dict['new_key'] = "value"
+big_dict.update({"yet_other_key": 12345})
+print(big_dict)
+
+## методи словника
+for k in big_dict:#.keys():
+    print(k)
+
+for v in big_dict.values():
+    print(v)
+
+for key, value in big_dict.items():
+    print(f"{key}:{value}")
+
+print(big_dict.keys())
+print(big_dict.values())
+
+print("*"*88)
+print(small_dict)
+new_dict = {}
+for key, value in small_dict.items():
+    if isinstance(value, (str, int, float, tuple)):
+        new_dict[value] = key
+    #print(k,":", v)
+print(new_dict)
 # # print("*"*88)
-# ## додавання значень в словник
-# big_dict['new_key'] = "value"
-# big_dict.update({"yet_other_key": 12345})
-# print(big_dict)
-
-# ## методи словника
-# for k, v in big_dict.items():
-#     print(k, v)
-
-# print(big_dict.keys())
-# print(big_dict.values())
-
-# # print("*"*88)
-# new_dict = {}
-# for key, value in small_dict.items():
-#     new_dict[value] = key
-#     #print(k,":", v)
-# print(new_dict)
-# # print("*"*88)
-# print(big_dict["user"]['second'])
-# # big_dict.copy()
-# # big_dict.clear()
-# big_dict["user"] = small_dict
-# print(big_dict["user"]['second'])
-# big_dict["is_blocked"] = True
-# # print(big_dict)
-# big_dict.update({"user2":{'name':'Bob', 'second': 'Hand', 'age': 40}})
-# big_dict.update({"page": 12133})
-# print(big_dict)
-
-# value = big_dict.get("page", 32)
-# print(value)
-# print(big_dict.pop("page", "default"))  #.popitem() -  видалення випадкового елемента
-# print(big_dict.pop("page", "default"))
+print(big_dict["user"]['second'])
+# big_dict.copy()
+# big_dict.clear()
+big_dict["user"] = small_dict
+print(big_dict["user"]['second'])
+big_dict["is_blocked"] = True
+print(big_dict)
+big_dict.update({"user2":{'name':'Bob', 'second': 'Hand', 'age': 40}})
+big_dict.update({"page": 12133})
+print(big_dict)
+#del big_dict["page"]
+print(big_dict)
+value = big_dict.get("page", 32)
+print(value)
+print(big_dict.pop("page", "default"))  #.popitem() -  видалення випадкового елемента
+print(big_dict.pop("page", "default"))
 # # порівняння словників Dictionary Comparisons
 # # Example: Word Counts
-# text = ('this is sample text with several words '
-#         'this is more sample text with some different words')
+text = ('this is sample text with several words '
+        'this is more sample text with some different words')
 # # без колекцій
 # # з колекціями
 # # from collections import Counter
-# # from collections import Counter
-# # c = Counter(text)
-# # print(c.most_common(5))
+from collections import Counter
+c = Counter(text)
+print(c.most_common(5))
 
-# text_counter = {} # створили пустий словник
-# for char in text:    # бере кожну літеру з text і вставляє в змінну char
-#     if char in text_counter:  # якщо char є в словнику text_counter
-#         text_counter[char] += 1  # збільшмим на один значення ключа char
-#     else: # якщо char в словнику немає
-#         text_counter[char] = 1   # встановимо значення ключа char =1
-# print(text_counter)
+text_counter = {} # створили пустий словник
+for char in text:    # бере кожну літеру з text і вставляє в змінну char
+    if char in text_counter:  # якщо char є в словнику text_counter
+        text_counter[char] += 1  # збільшмим на один значення ключа char
+    else: # якщо char в словнику немає
+        text_counter[char] = 1   # встановимо значення ключа char =1
+print(text_counter)
 
-# # Zipped key/value tuples form (ahead)
-# zipped = dict(zip(['a', 'b', 'c'], [1, 2, 3]))
-# print(zipped)
+# Zipped key/value tuples form (ahead)
+zipped = dict(zip(['a', 'b', 'c'], [1, 2, 3,]))
+print("zipped dict", zipped)
 
-# # Сети (набори)
-# my_blank_set = set()
-# ## перетворення в набір
-# numbers = list(range(4)) + list(range(10))
-# print(numbers)
-# print(set(numbers))
-# print(set(text))
-# my_list = [1,2,4,1,4,5,2,7,8,1,3,4,5]
-# print(set(my_list))
+# Сети (набори)
+my_blank_set = set()
+my_example_set = {1, "a" , 3 , "dkfhdjf", 656, (1, 2, 3)}
+## перетворення в набір
+numbers = list(range(4)) + list(range(10))
+print(numbers)
+print(set(numbers))
+print(set(text))
+my_list = [1,2,4,1,4,5,2,7,8,1,3,4,5]
+print(set(my_list))
 
-# ## операції з наборами
-# # порівняння
-# # підмножина. Еквівалентом методу issubset() є оператор <=
-# set_a = {1, 2, 3}
-# set_b = {1, 2, 4, 5, 3}
-# print(set_a.issubset(set_b))
-# print("B <= A", set_b <= set_a)
-# print("A <= B",set_a <= set_b)
+## операції з наборами
+# порівняння
+# підмножина. Еквівалентом методу issubset() є оператор <=
+set_a = {1, 2, 3}
+set_b = {1, 2, 4, 5, 3}
+print(set_a.issubset(set_b))
+print("A <= B", set_a <= set_b)
+print("B <= A", set_b <= set_a)
+
 # # обєднання  with the '|' operator or with the set type’s 'union' method
-# set_a = {1, 2, 3}
-# set_b = {3, 4, 5}
-# union_set = set_a | set_b
+set_a = {1, 2, 3}
+set_b = {3, 4, 5}
+union_set = set_a | set_b
 # union_set = set_a.union(set_b)
-# print(union_set)
+print(union_set)
 
-# # перетин 'intersection' and with the '&' operator
-# set_a = {1, 2, 3}
-# set_b = {3, 4, 5, 1}
-# intersection_set = set_a & set_b  # {3, 1}
-# print(intersection_set)
-# list_set = sorted(intersection_set)
-# #list_set.sort()
-# print(list_set)
+# перетин 'intersection' and with the '&' operator
+set_a = {1, 2, 3}
+set_b = {3, 4, 5, 1}
+intersection_set = set_a & set_b  # {3, 1}
+print(intersection_set)
+list_set = sorted(intersection_set)
+#list_set.sort()
+print(list_set)
 
-# # симетрична різниця
-# set_a = {1, 2, 3}
-# set_b = {3, 4, 5, 1, 2}
-# symmetric_difference_set = set_b ^ set_a  # {1, 2, 4, 5}
-# print(symmetric_difference_set)
+# симетрична різниця
+set_a = {1, 2, 3, "a"}
+set_b = {3, 4, 5, 1, 2}
+symmetric_difference_set = set_b ^ set_a  # {1, 2, 4, 5}
+print(symmetric_difference_set)
 
 # # кортежі Tuples
 # student_tuple = ()
 
 # # Елементи Tuple можуть бути будь-якого типу, включаючи числа, рядки, списки та інші Tuple. Наприклад:
-# my_tuple = ("apple", 3.14, [1, 2, 3], (4, 5, 6))
-# my_tuple[2].insert(3, 4)
-# # my_tuple[3].insert(3, 4)
-# print(my_tuple)
-# my_tuple[2].pop()
+my_tuple = ("apple", 3.14, [1, 2, 3], (4, 5, 6))
+my_tuple[2].insert(3, 4)
+print(my_tuple)
+my_tuple[2].pop()
+print(my_tuple)
 
-# # my_tuple[1] += 1  # видасть помилку, оскільки флоат в таплі незмінний!!
-# # print(my_tuple)
+# my_tuple[1] += 1  # видасть помилку, оскільки флоат в таплі незмінний!!
+print(my_tuple)
 # # Для доступу до елементів Tuple можна використовувати індексацію, яка починається з 0. Наприклад:
-# my_tuple = ("apple", "banana", "cherry")
-# print(my_tuple[1])  # "banana"
+my_tuple = ("apple", "banana", "cherry")
+print(my_tuple[1])  # "banana"
 
 # # Інші корисні операції з Tuple:
-# # Отримання довжини Tuple:
-# my_tuple = (1, 2, 3)
-# # print(len(my_tuple))  # 3
+# Отримання довжини Tuple:
+my_tuple = (1, 2, 3)
+print(len(my_tuple))  # 3
 
 # # Злиття двох Tuple:
-# tuple1 = (1, 2, 3)
-# tuple2 = ("apple", "banana", "cherry")
-# tuple3 = tuple1 + tuple2
-# print(tuple3)  # (1, 2, 3, "apple", "banana", "cherry")
+tuple1 = (1, 2, 3)
+tuple2 = ("apple", "banana", "cherry")
+tuple3 = tuple1 + tuple2
+print(tuple3)  # (1, 2, 3, "apple", "banana", "cherry")
 
 # # Перевірка наявності елемента в Tuple:
-# my_tuple = (1, 2, 3)
-# # print(1 in my_tuple)  # True
-# # print(4 in my_tuple)  # False
+my_tuple = (1, 2, 3)
+print(1 in my_tuple)  # True
+print(4 in my_tuple)  # False
 
 # # Повторення Tuple:
 # my_tuple = ("apple", "banana", "cherry")
 # print(my_tuple * 2)  # ("apple", "banana", "cherry", "apple", ...
 
-# print(isinstance(my_tuple, str))
-# print(isinstance(my_tuple, tuple))
+print(isinstance(my_tuple, str))
+print(isinstance(my_tuple, tuple))
