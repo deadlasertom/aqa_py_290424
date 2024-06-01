@@ -126,7 +126,7 @@ print(find_substring(str1, str2)) # поверне -1
 # task 7
 print ("Task 7")
 def aliens_game (alien_color):
-        """Starts game where player should shoot at colored aliens"""
+    """Starts game where player should shoot at colored aliens"""
         
     if alien_color == "green":
         return (f"You got {alien_color} - 5 points!")
