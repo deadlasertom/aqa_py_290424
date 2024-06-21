@@ -1,0 +1,9 @@
+{
+    "name": "Alex",
+    "age": 23,
+    "city": "Chernigiv",
+    "car": {
+        "name": "Zhaporozhec",
+        "year": 1886
+    }
+}
