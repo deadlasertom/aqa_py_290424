@@ -1,5 +1,3 @@
-
-
 class MobilePhone:
     it_has_button = False
 
@@ -84,7 +82,7 @@ class Account(Operation):
 
 teta_bank = Bank()
 teta_bank.change_name("Teta Bank")
-print(teta_bank.name, teta_bank.count)
+logger.info({teta_bank.name: teta_bank.count})
 
 bogdana_bank = Bank()
 bogdana_bank.change_name("Bogdana Bank")

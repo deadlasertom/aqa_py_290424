@@ -1,0 +1,31 @@
+
+2024-06-24 20:24:41,520 - INFO - 1 divided by 2 is 0.5
+2024-06-24 20:24:41,521 - DEBUG - Its message of level DEBUG
+2024-06-24 20:24:41,522 - INFO - Its message of level INFO
+2024-06-24 20:24:41,523 - WARNING - Its message of level WARNING
+2024-06-24 20:24:41,523 - ERROR - Its message of level ERROR
+2024-06-24 20:24:41,524 - CRITICAL - Its message of level CRITICAL
+2024-06-24 20:24:41,525 - ERROR - Attempted to divide by zero
+2024-06-24 20:24:41,525 - DEBUG - Its message of level DEBUG
+2024-06-24 20:24:41,526 - INFO - Its message of level INFO
+2024-06-24 20:24:41,527 - WARNING - Its message of level WARNING
+2024-06-24 20:24:41,528 - ERROR - Its message of level ERROR
+2024-06-24 20:24:41,529 - CRITICAL - Its message of level CRITICAL
+2024-06-24 20:31:12,553 - INFO - 1 divided by 2 is 0.5
+2024-06-24 20:31:12,554 - DEBUG - Its message of level DEBUG
+2024-06-24 20:31:12,555 - INFO - Its message of level INFO
+2024-06-24 20:31:12,556 - WARNING - Its message of level WARNING
+2024-06-24 20:31:12,556 - ERROR - Its message of level ERROR
+2024-06-24 20:31:12,557 - CRITICAL - Its message of level CRITICAL
+2024-06-24 20:31:12,558 - ERROR - Attempted to divide by zero
+2024-06-24 20:31:12,559 - DEBUG - Its message of level DEBUG
+2024-06-24 20:31:12,559 - INFO - Its message of level INFO
+2024-06-24 20:31:12,560 - WARNING - Its message of level WARNING
+2024-06-24 20:31:12,560 - ERROR - Its message of level ERROR
+2024-06-24 20:31:12,561 - CRITICAL - Its message of level CRITICAL
+2024-06-24 20:35:40,952 - logger - INFO - my_test - 4 - Msg
+2024-06-24 20:40:25,837 - logger - INFO - my_test - 8 - Msg
+2024-06-24 20:44:52,581 - logger - INFO - my_test - 10 - Msg
+2024-06-24 20:51:19,407 - logger - INFO - my_test - 11 - Msg
+2024-06-24 20:52:21,972 - logger - INFO - my_test - 12 - Msg
+2024-06-24 20:54:01,223 - logger - INFO - my_test - 12 - Msg
