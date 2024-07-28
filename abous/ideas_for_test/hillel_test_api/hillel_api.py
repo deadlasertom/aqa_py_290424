@@ -86,9 +86,8 @@ class Cars():
         return s.get(base_api_url+endpoint)
 
     @staticmethod
-    def brands_id_get(s: requests.session, id_: int): 
-        if not isinstance(id_, int) or id_ <= 0:
-            raise ValueError("Invalid 'id_', must be a positive integer")
+    def brands_id_get(s: requests.session, request_body: dict): #brands_id
+        id_ = request_body.get("id", 0)
         endpoint = f"/cars/brands/{id_}"
         return s.get(base_api_url+endpoint)
 
@@ -98,9 +97,8 @@ class Cars():
         return s.get(base_api_url+endpoint)
 
     @staticmethod
-    def models_id_get(s: requests.session, id_:int):
-        if not isinstance(id_, int) or id_ <= 0:
-            raise ValueError("Invalid 'id_', must be a positive integer")
+    def models_id_get(s: requests.session, request_body: dict):
+        id_ = request_body.get("id", 0)
         endpoint = f"/cars/models/{id_}"
         return s.get(base_api_url+endpoint)
 
@@ -115,23 +113,20 @@ class Cars():
         return s.post(base_api_url+endpoint, json=request_body)
 
     @staticmethod
-    def cars_id_get(s: requests.session, id_ : int):
-        if not isinstance(id_, int) or id_ <= 0:
-            raise ValueError("Invalid 'id_', must be a positive integer")
+    def cars_id_get(s: requests.session, request_body: dict):
+        id_ = request_body.get("id", 0)
         endpoint = f"/cars/{id_}"
         return s.get(base_api_url+endpoint)
 
     @staticmethod
-    def cars_id_put(s: requests.session, id_:int,  request_body: dict):
-        if not isinstance(id_, int) or id_ <= 0:
-            raise ValueError("Invalid 'id_', must be a positive integer")
+    def cars_id_put(s: requests.session, request_body: dict):
+        id_ = request_body.pop("id", 0)
         endpoint = f"/cars/{id_}"
         return s.put(base_api_url+endpoint, json=request_body)
 
     @staticmethod
-    def cars_id_delete(s: requests.session, id_:int):
-        if not isinstance(id_, int) or id_ <= 0:
-            raise ValueError("Invalid 'id_', must be a positive integer")
+    def cars_id_delete(s: requests.session, request_body: dict):
+        id_ = request_body.get("id", 0)
         endpoint = f"/cars/{id_}"
         return s.delete(base_api_url+endpoint)
 
@@ -152,9 +147,8 @@ class Expenses():
         return s.post(base_api_url+endpoint, json=request_body)
 
     @staticmethod
-    def expenses_id_get(s: requests.session, id_ : int):
-        if not isinstance(id_, int) or id_ <= 0:
-            raise ValueError("Invalid 'id_', must be a positive integer")
+    def expenses_id_get(s: requests.session, request_body: dict):
+        id_ = request_body.get("id", 1)
         endpoint = f"/expenses/{id_}"
         return s.get(base_api_url+endpoint)
 
@@ -165,9 +159,8 @@ class Expenses():
         return s.put(base_api_url+endpoint, json=request_body)
 
     @staticmethod
-    def expenses_id_delete(s: requests.session, id_ : int):
-        if not isinstance(id_, int) or id_ <= 0:
-            raise ValueError("Invalid 'id_', must be a positive integer")
+    def expenses_id_delete(s: requests.session, request_body: dict):
+        id_ = request_body.get("id", 1)
         endpoint = f"/expenses/{id_}"
         return s.delete(base_api_url+endpoint)
 
@@ -198,4 +191,3 @@ class API():
     cars = Cars()
     expenses = Expenses()
     instructions = Instructions()
-
