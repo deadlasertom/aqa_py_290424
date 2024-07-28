@@ -37,3 +37,73 @@ https://petstore.swagger.io/
 
     1. Обробіть відпові
 """
+import json
+import requests
+
+def get_pets_by_status(status):
+    url = "https://petstore.swagger.io/v2/pet/findByStatus"
+    params = {'status': status}
+    response = requests.get(url, params=params)
+    
+    if response.status_code == 200:
+        pets = response.json()
+        for pet in pets:
+            print(f"ID: {pet['id']}, Name: {pet['name']}, Status: {pet['status']}")
+    else:
+        print(f"Can't get pets. Error - {response.status_code}")
+
+status = 'available' #"sold" / "pending"
+#get_pets_by_status(status)
+
+def add_pet_post(pet_data):
+    url = "https://petstore.swagger.io/v2/pet"
+    headers = {"Content-Type": "application/json"}
+    response = requests.post(url, headers=headers, data=json.dumps(pet_data))
+
+    if response.status_code == 201 or response.status_code == 200:
+        #Насколько я понял, это особеност api, что возвращает 200, вместо 201 поэтому добавил or 
+        print ("Pet added succesfully:", response.json())
+    else:
+         print(f"Can't add pet. Error - {response.status_code}, response{response.text}")
+
+Jack_the_dog = {
+    "name": "Jack the dog", 
+    "status": "available"
+    }
+
+#add_pet_post(Jack_the_dog)
+
+def get_pet_byid(id):
+    url = f"https://petstore.swagger.io/v2/pet/{id}"
+    params = {'id': id}
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        pet = response.json()
+        print(f"ID: {pet['id']}, Name: {pet['name']}, Status: {pet['status']}")
+    elif response.status_code == 400:
+        print ("Invalid ID supplied")
+    elif response.status_code == 404:
+        print ("pet not found")
+    else:
+        print(f"Can't get pets. Error - {response.status_code}")
+
+getpetid = 1
+get_pet_byid(getpetid)
+
+def delete_pet_byid(id):
+    url = f"https://petstore.swagger.io/v2/pet/{id}"
+    params = {'id': id}
+    response = requests.delete(url, params=params)
+    if response.status_code == 200:
+        pet = response.json()
+        print(f"Pet with id {id} is succesfully deleted")
+    elif response.status_code == 400:
+        print ("Invalid ID supplied")
+    elif response.status_code == 404:
+        print ("pet not found")
+    else:
+        print(f"Can'delete pet. Error - {response.status_code}")
+
+delete_pet_id = 1
+delete_pet_byid(delete_pet_id)
+get_pet_byid(getpetid)
